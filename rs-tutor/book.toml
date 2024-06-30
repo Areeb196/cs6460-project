@@ -3,4 +3,7 @@ authors = ["Areeb Ahmed"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Learn Rust"
+title = "Learn Rust's Borrowing Rules"
+
+[output.html.playground]
+editable = true
