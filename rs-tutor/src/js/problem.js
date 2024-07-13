@@ -1,6 +1,7 @@
 // chart.js, google charts, d3.js
 // sessionstorage, localstorage, 
-var intervalID;
+var evalID;
+var timerID;
 var time_step = 10000;
 
 function fetch_with_timeout(url, options, timeout = 6000) {
@@ -52,12 +53,44 @@ function evaluateCode() {
     .catch(error => console.log("Error during compilation: " + error.message));
 }
 
+function updateTimer() {
+    let timerElement = document.getElementById('timer')
+    let [minutes, seconds] = timerElement.textContent.split(':')
+    let formattedTime
+    
+    minutes = parseInt(minutes, 10)
+    seconds = parseInt(seconds, 10)
+
+    seconds--
+    if (seconds === 0 && minutes === 0) {
+        // timer goes to zero
+        clearInterval(evalID)
+        clearInterval(timerID)
+        alert("Time's up!")
+    }
+    else if (seconds < 0) {
+        minutes--
+        seconds = 59
+    }
+    
+    formattedTime = (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                    (seconds < 10 ? "0" + seconds : seconds)
+    timerElement.textContent = formattedTime
+}
+
 function start() {
     console.log("Start code evaluation.")
-    intervalID = setInterval(evaluateCode, time_step);
+
+    let timerElement = document.getElementById('timer');
+    timerElement.style.display = 'block'; // Show the timer element
+    timerElement.textContent = "00:10"
+
+    evalID = setInterval(evaluateCode, time_step);
+    timerID = setInterval(updateTimer, 1000);
 }
 
 function done() {
     console.log("Stop code evaluation.")
-    clearInterval(intervalID);
+    clearInterval(evalID);
+    clearInterval(timerID)
 }

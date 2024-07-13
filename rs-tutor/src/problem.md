@@ -24,6 +24,7 @@ fn main() {
 }
 ```
 <button onclick="done()">Done</button>
+<div class="timer" id="timer" style="display:none;"></div>
 
 <!-- fn find_max_min_diff(nums: &[i32]) -> i32 {
     // Initialize min and max with the first element
