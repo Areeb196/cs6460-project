@@ -8,7 +8,7 @@ Constraints:
 - The list `nums` will not be empty and will contain at least two elements.
 - The elements in `nums` will fit within the range of 32-bit signed integers (i32).
 
-Press the `Start` button to begin knowledge tracing. You have 15 minutes to complete the problem. A time will be displayed below when tracing begins. If you're done before 15 minutes, press `Done` to see the borrowing skill graph on the next page.
+Press the `Start` button to begin knowledge tracing. You have 15 minutes to complete the problem. A timer will be displayed below when tracing begins. If you're done before 15 minutes, press `Done` to see the borrowing skill graph on the next page.
 <script src="js/problem.js"></script>
 <button onclick="start()">Start</button>
 ## Your Solution
