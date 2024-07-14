@@ -1,5 +1,3 @@
-// chart.js, google charts, d3.js
-// sessionstorage, localstorage, 
 var evalID;
 var timerID;
 var time_step = 0;
