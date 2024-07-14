@@ -176,13 +176,13 @@
                         <h1 id="problem"><a class="header" href="#problem">Problem</a></h1>
 <p>This problem is for tracking your borrowing skills. Write code to solve the problem. As you're writing code, your skills are tracked.</p>
 <h2 id="prompt"><a class="header" href="#prompt">Prompt</a></h2>
-<p>Given a list of integers, implement a function <code>find_max_min_diff</code> that returns the difference between the maximum and minimum values in the list. You are not allowed to sort the list or use any built-in sorting functions.</p>
+<p>Given a list of integers, implement a function <code>find_max_min_diff</code> that returns the difference between the maximum and minimum values in the list. You are not allowed to sort the list or use any built-in sorting/max/min functions.</p>
 <p>Constraints:</p>
 <ul>
 <li>The list <code>nums</code> will not be empty and will contain at least two elements.</li>
 <li>The elements in <code>nums</code> will fit within the range of 32-bit signed integers (i32).</li>
 </ul>
-<p>Press the <code>Start</code> button to begin knowledge tracing. Once you're done, press <code>Done</code> to see the borrowing skill graph.</p>
+<p>Press the <code>Start</code> button to begin knowledge tracing. You have 15 minutes to complete the problem. A timer will be displayed below when tracing begins. If you're done before 15 minutes, press <code>Done</code> to see the borrowing skill graph on the next page.</p>
 <script src="js/problem.js"></script>
 <p><button onclick="start()">Start</button></p>
 <h2 id="your-solution"><a class="header" href="#your-solution">Your Solution</a></h2>
@@ -191,11 +191,11 @@
 }
 
 fn main() {
-    // Uncomment to test your code
-    // assert_eq!(find_max_min_diff(&amp;[4, 1, 9, 3, 5]), 8);
-    // assert_eq!(find_max_min_diff(&amp;[2, 8, 7, 1, 5, 3]), 7);
+    assert_eq!(find_max_min_diff(&amp;[4, 1, 9, 3, 5]), 8);
+    assert_eq!(find_max_min_diff(&amp;[2, 8, 7, 1, 5, 3]), 7);
 }</code></pre></pre>
 <p><button onclick="done()">Done</button></p>
+<div class="timer" id="timer" style="display:none;"></div>
 <!-- fn find_max_min_diff(nums: &[i32]) -> i32 {
     // Initialize min and max with the first element
     let mut min = nums[0];
