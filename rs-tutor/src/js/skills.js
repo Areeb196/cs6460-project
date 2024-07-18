@@ -21,7 +21,7 @@ function drawSkill() {
     let skillDataPoints = averageSkills(JSON.parse(sessionStorage.getItem("td_bkt")))
 
     var rows = skillDataPoints.map(function(value, index) {
-        return [index + 1, value];
+        return [index, value];
     });
     data.addRows(rows);
 
@@ -43,8 +43,8 @@ function drawSkill() {
 function averageSkills(skills) {
     let res = [];
     for (let i = skills.length-1; i >= 0; i--) {
-        let left = Math.max(i-N+2, 0)
-        var sliceArray = skills.slice(left, i);
+        let left = Math.max(i-N+1, 0)
+        var sliceArray = skills.slice(left, i+1);
         var sum = sliceArray.reduce(function(total, currentValue) {
             return total + currentValue;
         }, 0);
@@ -53,6 +53,6 @@ function averageSkills(skills) {
         var average = sum / sliceArray.length;
         res.push(average);
     }
-    console.log(res, skills)
+    
     return res.reverse();
 }
